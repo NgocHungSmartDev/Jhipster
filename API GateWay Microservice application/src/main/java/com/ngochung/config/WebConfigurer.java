@@ -80,7 +80,7 @@ public class WebConfigurer implements WebFluxConfigurer {
     }
 
     @Bean
-    @Profile(JHipsterConstants.SPRING_PROFILE_PRODUCTION)
+    @Profile(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)
     public CachingHttpHeadersFilter cachingHttpHeadersFilter() {
         // Use a cache filter that only match selected paths
         return new CachingHttpHeadersFilter(TimeUnit.DAYS.toMillis(jHipsterProperties.getHttp().getCache().getTimeToLiveInDays()));

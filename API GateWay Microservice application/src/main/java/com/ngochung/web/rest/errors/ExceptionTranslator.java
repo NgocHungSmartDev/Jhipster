@@ -168,7 +168,7 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
     public ProblemBuilder prepare(final Throwable throwable, final StatusType status, final URI type) {
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
 
-        if (activeProfiles.contains(JHipsterConstants.SPRING_PROFILE_PRODUCTION)) {
+        if (activeProfiles.contains(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)) {
             if (throwable instanceof HttpMessageConversionException) {
                 return Problem
                     .builder()
